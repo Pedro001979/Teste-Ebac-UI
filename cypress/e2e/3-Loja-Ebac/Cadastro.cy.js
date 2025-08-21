@@ -8,7 +8,7 @@ describe('Fucionalidade: Cadastro', () => {
 
     it('Deve completar o cadastro com sucesso', () => {
         cy.get('#reg_email').type(faker.internet.email())
-        cy.get('#reg_password'). type(faker.internet.password())
+        cy.get('#reg_password').type(faker.internet.password())
         cy.get(':nth-child(4) > .button').click()
 
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
@@ -22,15 +22,15 @@ describe('Fucionalidade: Cadastro', () => {
         cy.get('.woocommerce-message').should('exist')
     });
 
-     it('Deve completar o cadastro com sucesso - Usando Variaveis', () => {
+    it('Deve completar o cadastro com sucesso - Usando Variaveis', () => {
         var firstName = faker.person.firstName()
         var lastName = faker.person.lastName()
-        var email = faker.internet.email(firstName , lastName)
+        var email = faker.internet.email(firstName, lastName)
         var password = faker.internet.password()
- 
- 
+
+
         cy.get('#reg_email').type(email)
-        cy.get('#reg_password'). type(password)
+        cy.get('#reg_password').type(password)
         cy.get(':nth-child(4) > .button').click()
 
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
@@ -42,5 +42,11 @@ describe('Fucionalidade: Cadastro', () => {
         cy.get('.woocommerce-Button').click()
 
         cy.get('.woocommerce-message').should('exist')
+    });
+
+    it('Deve completar o cadastro com sucesso - usando comandos customizados', () => {
+        cy.preCadastro(faker.internet.email(), faker.internet.password(), faker.person.firstName(), faker.person.lastName())
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
+
     });
 });
