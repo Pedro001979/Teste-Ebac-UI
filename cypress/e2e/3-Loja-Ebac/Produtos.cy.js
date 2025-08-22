@@ -33,7 +33,7 @@ describe('Fucionalidade: Produtos', () => {
         cy.get('.woocommerce-message').should('exist')
     });
 
-     it.only('Deve adicionar produto ao carrinho - buscando na massa de dados', () => {
+     it('Deve adicionar produto ao carrinho - buscando na massa de dados', () => {
        cy.fixture('produtos').then(dados => {
             produtosPage.buscarProduto(dados[2].nomeProduto)
             produtosPage.addProdutoCarrinho(
