@@ -1,0 +1,20 @@
+[
+    {
+        "nomeProduto": "Argus All-Weather Tank",
+        "tamanho": "XS",
+        "cor": "Gray",
+        "quantidade": 3
+    },
+    {
+        "nomeProduto": "Atomic Endurance Running Tee (Crew-Neck)",
+        "tamanho": "S",
+        "cor": "Blue",
+        "quantidade": 6
+    },
+    {
+        "nomeProduto": "Beaumont Summit Kit",
+        "tamanho": "M",
+        "cor": "Orange",
+        "quantidade": 10
+    }
+]
